@@ -3,13 +3,13 @@ const express = require("express");
 const api = express.Router();
 
 var WelcomeController = require('../controller/welcome')
-//var AlumnosController = require('../controller/alumnos');
+var AlumnosController = require('../controller/alumnos');
 
 api.get("/",WelcomeController.welcome);
 
-//api.get("/alumnos",AlumnosController.alumnos);
+api.get("/usuario",AlumnosController.usuario);
 
-//api.get("/alumno",WelcomeController.alumno);
+//api.get("/alumno",WelcomeController.alumnos);
 
 /*api.get("/alumno",WelcomeController.alumno);
 
