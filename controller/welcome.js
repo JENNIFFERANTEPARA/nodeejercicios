@@ -3,9 +3,9 @@
 var controller = {
 
     welcome: function(req, res){
-        console.log("get ejecutado en raiz");
- res.send("mi primer trabajo");
-    },
+        console.log("Realizando un debug");
+        res.send("Mi ejemplo debug");
+    }/*,
 
     alumnos: function(req, res) {
         res.send("mi listado de alumnos");
@@ -47,7 +47,7 @@ var controller = {
     },
     eliminar_alumno: function(req, res) {
         res.send("eliminamos un alumno");
-    },
+    },*/
 };
 
 module.exports = controller;
