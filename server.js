@@ -12,8 +12,8 @@ mongoose.connect('mongodb://127.0.0.1:27017',{ useNewUrlParser:true, useUnifiedT
             //Crear servidor
            var server = app.listen(port,()=>{
                console.log("Servidor corriendo correctamente en la url: http://localhost:" +port);
-                                            });
-                                            server.timeoute= 120000;
+                 });
+                 server.timeoute= 120000;
     })
     .catch(err => console.log(err));
 

@@ -5,12 +5,12 @@ var controller = {
     welcome: function(req, res){
         console.log("Realizando un debug");
         res.send("Mi ejemplo debug");
-    }/*,
-
-    alumnos: function(req, res) {
-        res.send("mi listado de alumnos");
     },
-    alumno: function(req, res) {
+
+//alumnos: function(req, res) {
+//res.send("mi listado de alumnos");
+//}
+    /*,alumno: function(req, res) {
     let cal1=5;
     let cal2=5;
     let cal3=5;

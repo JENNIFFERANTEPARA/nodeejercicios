@@ -1,5 +1,6 @@
 'use estric'
 const express = require("express");
+const {body} = require("express-validator");
 const api = express.Router();
 
 var WelcomeController = require('../controller/welcome')
@@ -9,14 +10,19 @@ api.get("/",WelcomeController.welcome);
 
 api.get("/usuario",AlumnosController.usuario);
 
-//api.get("/alumno",WelcomeController.alumnos);
+api.get("/alumno/:sku",AlumnosController.alumnos);
 
-/*api.get("/alumno",WelcomeController.alumno);
+//api.get("/alumno",WelcomeController.alumno);
 
-api.post("/alumno",WelcomeController.crear_alumno);
+api.post("/alumno",[
+   body('sku').not().isEmpty(),
+   body('nombre').not().isEmpty(),
+   body('apellido').not().isEmpty(),
+   body('edad').not().isEmpty()
+],AlumnosController.crear_alumno);
 
-api.put("/alumno",WelcomeController.poner_alumno);
+api.delete("/alumno/:sku",AlumnosController.eliminar_alumno);
 
-api.delete("/alumno",WelcomeController.eliminar_alumno);*/
+api.put("/alumno",AlumnosController.update_alumno);
 
    module.exports = api;
