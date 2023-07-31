@@ -64,13 +64,17 @@ var controller = {
         },
 
         crear_alumno: (req, res)=> {
-           // let user_info=req.body;
-            // console.log(user_info);
-const errors = validationResult(req);
-if(!errors.isEmpty()){
-    return res.status(422).json({errors:errors.array()});
-}
-             var body = req.body;
+
+              // let user_info=req.body;
+              // console.log(user_info);
+
+              const errors = validationResult(req);
+              if(!errors.isEmpty()){
+                  return res.status(422).json({errors:errors.array()});
+              }
+
+              var body = req.body;
+
              alumnos.find({sku:body.sku, nombre: body.nombre})    
              .then((data) => {
              if(data.length > 0) return res.status(400).send({status:400,message:"ya existe"});
@@ -132,9 +136,20 @@ if(!errors.isEmpty()){
              });
     ;
         },
-        update_alumno: function(req, res) {
-            res.send("actualizamos un alumno");
-        },
+        
+    update_alumno: function(req, res) {
+        // Validamos los datos que se envian al EndPoint
+        const errors = validationResult(req);
+        if(!errors.isEmpty()){
+            return res.status(422).json({errors:errors.array()});
+        }
+
+        let user_info = req.body;
+
+              //console.log("hola");
+       
+                
+                }
 
 };
 
