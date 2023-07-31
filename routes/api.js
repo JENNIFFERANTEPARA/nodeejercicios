@@ -23,6 +23,11 @@ api.post("/alumno",[
 
 api.delete("/alumno/:sku",AlumnosController.eliminar_alumno);
 
-api.put("/alumno",AlumnosController.update_alumno);
+api.put("/alumno",[
+   body('sku').not().isEmpty(),
+   body('nombre').not().isEmpty(),
+   body('apellido').not().isEmpty(),
+   body('edad').not().isEmpty()
+],AlumnosController.update_alumno);
 
    module.exports = api;
